@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/pages/home_page.dart';
+import 'package:flutter_portfolio/pages/responsive_wrapper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -10,12 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Personal Portfolio',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        primarySwatch: Colors.blue,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Scaffold()
+      home: const ResponsiveWrapper(
+        child: HomePage(),
+      ),
     );
   }
 }
-
